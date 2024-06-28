@@ -24,7 +24,12 @@ jobs:
       run: dir SumDigits/SumDigits/x64/Debug
 
     - name: Verify Executable
-      run: if exist ./SumDigits/SumDigits/x64/Debug/SumDigits.exe (echo Executable exists) else (echo Executable does not exist)
+      run: |
+        if (Test-Path -Path "./SumDigits/SumDigits/x64/Debug/SumDigits.exe") {
+          Write-Output "Executable exists"
+        } else {
+          Write-Output "Executable does not exist"
+        }
 
     - name: Run tests
       run: ./SumDigits/SumDigits/x64/Debug/SumDigits.exe
