@@ -23,6 +23,9 @@ jobs:
     - name: List output files
       run: dir SumDigits/SumDigits/x64/Debug
 
+    - name: Verify Executable
+      run: if exist ./SumDigits/SumDigits/x64/Debug/SumDigits.exe (echo Executable exists) else (echo Executable does not exist)
+
     - name: Run tests
       run: ./SumDigits/SumDigits/x64/Debug/SumDigits.exe
       timeout-minutes: 2
