@@ -25,3 +25,4 @@ jobs:
 
     - name: Run tests
       run: ./SumDigits/SumDigits/x64/Debug/SumDigits.exe
+      timeout-minutes: 2
