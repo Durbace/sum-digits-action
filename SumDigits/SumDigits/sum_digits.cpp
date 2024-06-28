@@ -7,7 +7,7 @@ int sumDigits(int nr) {
 
     while (nr > 0) {
         sum += nr % 10;
-        nr /= 10;
+        //nr /= 10;
     }
 
     return sum;
