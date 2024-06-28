@@ -1,13 +1,18 @@
 #include <iostream>
 #include <cassert>
+#include <cmath>
 
 int sumDigits(int nr) {
     int sum = 0;
     nr = std::abs(nr);
 
+    std::cout << "Initial nr: " << nr << std::endl;
+
     while (nr > 0) {
         sum += nr % 10;
-        //nr /= 10;
+        nr /= 10;
+
+        std::cout << "Current nr: " << nr << ", sum: " << sum << std::endl;
     }
 
     return sum;
