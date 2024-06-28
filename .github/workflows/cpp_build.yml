@@ -18,7 +18,10 @@ jobs:
       uses: microsoft/setup-msbuild@v1.0.2
 
     - name: Build project with MSBuild
-      run: msbuild SumDigits/SumDigits.sln /p:Configuration=Release /p:Platform="x64"
+      run: msbuild SumDigits/SumDigits.vcxproj /p:Configuration=Debug /p:Platform="x64"
+
+    - name: List output files
+      run: dir SumDigits/x64/Debug
 
     - name: Run tests
-      run: ./SumDigits/x64/Release/test_sum_digits.exe
+      run: ./SumDigits/x64/Debug/SumDigits.exe
